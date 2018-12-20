@@ -1,7 +1,6 @@
 package demo
 
 import com.fasterxml.jackson.databind.SerializationFeature
-import demo.resources.LegacyResource
 import demo.resources.WidgetResource
 import io.dropwizard.Application
 import io.dropwizard.Configuration
@@ -16,10 +15,7 @@ class WidgetApp : Application<Configuration>() {
         //     fun with<A, B>(receiver: A,  block: A.() -> B): B
         with(environment) {
             // Inject our resource
-            with(jersey()) {
-                register(WidgetResource(Clock.systemUTC()))
-                register(LegacyResource(Clock.systemUTC()))
-            }
+            jersey().register(WidgetResource(Clock.systemUTC()))
 
             // Write timestamps in ISO format
             objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
