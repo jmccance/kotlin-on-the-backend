@@ -12,7 +12,7 @@ class WidgetApp : Application<Configuration>() {
         // `with` Lets us write a block treating its argument as the receiver.
         // All the calls inside the `with` block are implicitly using `environment` as `this`.
         // `with` is _not_ keyword; it's just a regular function:
-        //     fun with<A, B>(receiver: A, block: A.() -> B): B
+        //     fun with<A, B>(receiver: A,  block: A.() -> B): B
         with(environment) {
             // Inject our resource
             jersey().register(WidgetResource(Clock.systemUTC()))

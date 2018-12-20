@@ -11,5 +11,6 @@ rootProject.name = "kotlin-on-the-backend"
 
 include(
     "001-simple-kotlin",
-    "002-dropwizard-kt"
+    "002-dropwizard-kt",
+    "003-ktor"
 )
